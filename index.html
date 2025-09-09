@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herramienta de Análisis de Datos</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
+    <meta name="description" content="Herramienta de análisis de datos con soporte para CSV y visualizaciones accesibles">
+</head>
+<body>
+    <header>
+        <h1>Herramienta de Análisis de Datos</h1>
+        <div class="theme-toggle">
+            <button id="themeToggle" aria-label="Cambiar a modo oscuro">🌙</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="input-section" aria-labelledby="csvInputLabel">
+            <h2 id="csvInputLabel">Ingresar Datos CSV</h2>
+            <div class="input-options">
+                <div class="file-input-container">
+                    <label for="fileInput" class="file-input-label">
+                        <span>Seleccionar archivo CSV</span>
+                        <input type="file" id="fileInput" accept=".csv" aria-describedby="fileHelp">
+                    </label>
+                    <p id="fileHelp" class="help-text">O pegue sus datos CSV a continuación</p>
+                </div>
+                <div class="paste-container">
+                    <label for="csvInput" class="visually-hidden">Pegar datos CSV</label>
+                    <textarea id="csvInput" rows="8" placeholder="Pegue sus datos CSV aquí..."></textarea>
+                </div>
+                <div class="button-group">
+                    <button id="parseBtn" class="primary-btn">Procesar Datos</button>
+                    <button id="clearBtn" class="secondary-btn">Limpiar</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="data-section" aria-labelledby="dataTableLabel" hidden>
+            <div class="section-header">
+                <h2 id="dataTableLabel">Tabla de Datos</h2>
+                <div class="table-controls">
+                    <label for="searchInput" class="visually-hidden">Buscar en la tabla</label>
+                    <input type="text" id="searchInput" placeholder="Buscar...">
+                    <button id="exportCsvBtn" class="secondary-btn">Exportar CSV</button>
+                </div>
+            </div>
+            <div class="table-container">
+                <table id="dataTable" class="data-table" role="grid" aria-label="Datos tabulados">
+                    <!-- Table will be populated by JavaScript -->
+                </table>
+            </div>
+        </section>
+
+        <section class="chart-section" aria-labelledby="chartLabel" hidden>
+            <div class="section-header">
+                <h2 id="chartLabel">Gráfico</h2>
+                <div class="chart-controls">
+                    <div class="form-group">
+                        <label for="xAxisSelect">Eje X:</label>
+                        <select id="xAxisSelect" class="form-control"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="yAxisSelect">Eje Y:</label>
+                        <select id="yAxisSelect" class="form-control"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="chartType">Tipo de Gráfico:</label>
+                        <select id="chartType" class="form-control">
+                            <option value="bar">Barras Verticales</option>
+                            <option value="horizontalBar">Barras Horizontales</option>
+                            <option value="line">Línea</option>
+                            <option value="pie">Torta</option>
+                        </select>
+                    </div>
+                    <button id="updateChartBtn" class="primary-btn">Actualizar Gráfico</button>
+                    <button id="exportChartBtn" class="secondary-btn">Exportar Imagen</button>
+                </div>
+            </div>
+            <div class="chart-container">
+                <canvas id="dataChart" role="img" aria-label="Visualización de datos"></canvas>
+            </div>
+        </section>
+    </main>
+
+    <div id="errorToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" hidden>
+        <div class="toast-content">
+            <span id="errorMessage"></span>
+            <button class="close-toast" aria-label="Cerrar mensaje">×</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

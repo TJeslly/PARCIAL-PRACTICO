@@ -1,7 +1,8 @@
 # Herramienta de Análisis de Datos (BI Tool)
 
 Una aplicación web de una sola página (SPA) que permite visualizar y analizar datos en formato CSV de manera interactiva, con soporte para la generación de gráficos y exportación de resultados.
-#Link
+
+Link
 https://tjeslly.github.io/PARCIAL-PRACTICO/
 
 ## Características Principales

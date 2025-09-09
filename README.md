@@ -117,13 +117,6 @@ La aplicación incluye un conmutador de tema en la esquina superior derecha. La 
 - Algunos formatos de CSV complejos pueden requerir ajustes
 - El rendimiento puede verse afectado con conjuntos de datos muy grandes
 
-## Contribuir
-
-Las contribuciones son bienvenidas. Por favor, lea las pautas de contribución antes de enviar cambios.
-
-## Licencia
-
-Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
 
 ## Créditos
 
@@ -133,4 +126,3 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 
 ---
 
-Desarrollado con ❤️ para análisis de datos accesibles
